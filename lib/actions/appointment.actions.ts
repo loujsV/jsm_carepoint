@@ -87,15 +87,15 @@ export const updateAppointment = async ({
         }
 
         //TODO SMS notification
-        const smsMessage = `
-        Hi, It's CarePoint-LVJ!
-        ${type === 'schedule'
-            ? `Your appointment with the doctor ${appointment.primaryPhysician} has been scheduled on ${formatDateTime(appointment.schedule!).dateTime}`
-            : `We regret to inform you that your appointment has been cancelled for the following reason: ${appointment.cancellationReason}`
-        }
-        `;
+        // const smsMessage = `
+        // Hi, It's CarePoint-LVJ!
+        // ${type === 'schedule'
+        //     ? `Your appointment with the doctor ${appointment.primaryPhysician} has been scheduled on ${formatDateTime(appointment.schedule!).dateTime}`
+        //     : `We regret to inform you that your appointment has been cancelled for the following reason: ${appointment.cancellationReason}`
+        // }
+        // `;
 
-        await sendSMSNotification(userId, smsMessage);
+        // await sendSMSNotification(userId, smsMessage);
 
 
         revalidatePath('/admin');
